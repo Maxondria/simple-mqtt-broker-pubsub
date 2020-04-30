@@ -1,0 +1,25 @@
+{
+  "name": "simple-mqtt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Maxondria <maxtayebwa@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start:broker": "nodemon --exec babel-node src/broker",
+    "start:pub": "nodemon --exec babel-node src/publisher",
+    "start:sub": "nodemon --exec babel-node src/subscriber",
+    "start": "concurrently \"yarn start:broker\" \"yarn start:pub\" \"yarn start:sub\""
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "nodemon": "^2.0.3"
+  },
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "mosca": "^2.8.3",
+    "mqtt": "^4.0.0"
+  }
+}
